@@ -475,18 +475,30 @@ const ProductReview = () => {
                 </div>
 
                 {!productReview.length ? (
-                  <div className="p-6 text-base dark:bg-gray-900">
+                  <div className="p-6 text-base">
                     <p>No product review </p>
                   </div>
                 ) : (
                   productReview.map((review: any) => (
                     <>
-             
+ 
 <div className="flex flex-col space-y-4 p-2">
 <div className="bg-white p-4 rounded-lg shadow-md">
   <div className="flex justify-between">
+    <div className="flex gap-2">
+    <img
+        className="w-6 h-6 rounded-full"
+        src={
+          review &&
+          review.user &&
+          review.user.image &&
+          review.user.image.url
+        }
+        alt=""
+      />
     <h3 className="text-xs font-bold"> {review && review.user && review.user.fullName}</h3>
-    <div className="flex text-sm text-gray-600 dark:text-gray-400">
+    </div>
+    <div className="flex text-sm text-gray-600">
       <div>
         <StarIcon
           width={12}
@@ -574,7 +586,7 @@ const ProductReview = () => {
           "MMM. d, yyyy"
         )}
         </p>
-    <p className="text-gray-700"> {review && review.remark} </p>
+    <p className="text-gray-700 max-w-sm sm:max-w-md md:max-w-lg text-justify"> {review && review.remark} </p>
 </div>
 </div>
                     </>
