@@ -371,7 +371,7 @@ if(aUserOrderedProducts){
 
                           <div className="">
                             {/* <div className="max-w-sm mx-auto bg-white dark:bg-gray-900 rounded-lg overflow-hidden shadow-lg"> */}
-                            <div className="bg-white dark:bg-gray-900 rounded-lg overflow-hidden shadow-lg">
+                            <div className="bg-white rounded-lg overflow-hidden shadow-lg">
                               <div className="border-b px-4 pb-6">
                                 <div className="text-center my-4">
                                   <img
@@ -446,8 +446,8 @@ if(aUserOrderedProducts){
                                     className={
                                       selected1
                                         ? "flex-1 rounded-full bg-red-800 hover:bg-red-700 text-white hover:text-white font-semibold hover:bg-red-700 px-3 py-1"
-                                        : "flex-1 rounded-full bg-white border border-red-800 hover:bg-red-700 hover:text-white dark:border-gray-700 font-semibold text-red-800 dark:text-white px-3 py-1"
-                                    }
+                                        : "flex-1 rounded-full bg-white border border-red-800 hover:bg-red-700 hover:text-red-800 dark:border-gray-700 font-semibold text-red-800 dark:text-white px-3 py-1"
+                          }
                                   >
                                    Recent Order 
                                   </button>
