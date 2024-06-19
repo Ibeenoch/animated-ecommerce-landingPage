@@ -796,9 +796,7 @@ const ProductDetail = () => {
                         <article className="p-6 text-base border-gray-300 border-b bg-white">
                           <footer className="flex justify-between items-center mb-2">
                             <div className="flex items-center">
-                              <p className="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white font-semibold">
-                                <img
-                                  className="mr-2 w-6 h-6 rounded-full"
+                              <p className="inline-flex items-center mr-3 text-sm text-gray-900 font-semibold">
                                   src={
                                     review &&
                                     review.user &&
@@ -894,10 +892,10 @@ const ProductDetail = () => {
                             <button
                               id="dropdownremark1Button"
                               data-dropdown-toggle="dropdownremark1"
-                              className="inline-flex items-center p-2 text-sm font-medium text-center text-gray-500 dark:text-gray-400 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-50 dark:bg-gray-900 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                              className="inline-flex items-center p-2 text-sm font-medium text-center text-gray-500 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-50"
                               type="button"
                             >
-                              <p className="text-sm text-gray-600 dark:text-gray-400">
+                              <p className="text-sm text-gray-600">
                                 <time>
                                   {format(
                                     review && review.createdAt,
@@ -943,7 +941,7 @@ const ProductDetail = () => {
                               </ul>
                             </div>
                           </footer>
-                          <p className="text-gray-500 dark:text-gray-400">
+                          <p className="text-gray-500">
                             {review && review.remark}
                           </p>
                         </article>
