@@ -481,11 +481,11 @@ const ProductReview = () => {
                 ) : (
                   productReview.map((review: any) => (
                     <>
-                     
-<div class="flex flex-col space-y-4 p-2">
-<div class="bg-white p-4 rounded-lg shadow-md">
+             
+<div className="flex flex-col space-y-4 p-2">
+<div className="bg-white p-4 rounded-lg shadow-md">
   <div className="flex justify-between">
-    <h3 class="text-xs font-bold"> {review && review.user && review.user.fullName}</h3>
+    <h3 className="text-xs font-bold"> {review && review.user && review.user.fullName}</h3>
     <div className="flex text-sm text-gray-600 dark:text-gray-400">
       <div>
         <StarIcon
@@ -569,12 +569,12 @@ const ProductReview = () => {
       </div>
     </div>
     </div>
-    <p class="text-gray-700 text-sm mb-2">Posted on  {format(
+    <p className="text-gray-700 text-sm mb-2">Posted on  {format(
           review && review.createdAt,
           "MMM. d, yyyy"
         )}
         </p>
-    <p class="text-gray-700"> {review && review.remark} </p>
+    <p className="text-gray-700"> {review && review.remark} </p>
 </div>
 </div>
                     </>
