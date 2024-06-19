@@ -481,160 +481,102 @@ const ProductReview = () => {
                 ) : (
                   productReview.map((review: any) => (
                     <>
-                      <article className="p-6 text-base bg-white border-b border-gray-300 dark:bg-gray-900">
-                        <footer className="flex justify-between items-center mb-2">
-                          <div className="flex items-center">
-                            <p className="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white font-semibold">
-                              <img
-                                className="mr-2 w-6 h-6 rounded-full"
-                                src={
-                                  review &&
-                                  review.user &&
-                                  review.user.image &&
-                                  review.user.image.url
-                                }
-                                alt=""
-                              />
-                              {review && review.user && review.user.fullName}
-                            </p>
-                            <div className="flex text-sm text-gray-600 dark:text-gray-400">
-                              <div>
-                                <StarIcon
-                                  width={15}
-                                  height={15}
-                                  color={
-                                    review && review.rating >= 1
-                                      ? "orange"
-                                      : "gray"
-                                  }
-                                  fill={
-                                    review && review.rating >= 1
-                                      ? "orange"
-                                      : "gray"
-                                  }
-                                />
-                              </div>
-                              <div>
-                                <StarIcon
-                                  width={15}
-                                  height={15}
-                                  color={
-                                    review && review.rating >= 2
-                                      ? "orange"
-                                      : "gray"
-                                  }
-                                  fill={
-                                    review && review.rating >= 2
-                                      ? "orange"
-                                      : "gray"
-                                  }
-                                />
-                              </div>
-                              <div>
-                                <StarIcon
-                                  width={15}
-                                  height={15}
-                                  color={
-                                    review && review.rating >= 3
-                                      ? "orange"
-                                      : "gray"
-                                  }
-                                  fill={
-                                    review && review.rating >= 3
-                                      ? "orange"
-                                      : "gray"
-                                  }
-                                />
-                              </div>
-                              <div>
-                                <StarIcon
-                                  width={15}
-                                  color={
-                                    review && review.rating >= 4
-                                      ? "orange"
-                                      : "gray"
-                                  }
-                                  fill={
-                                    review && review.rating >= 4
-                                      ? "orange"
-                                      : "gray"
-                                  }
-                                />
-                              </div>
-                              <div>
-                                <StarIcon
-                                  width={15}
-                                  height={15}
-                                  color={
-                                    review && review.rating >= 5
-                                      ? "orange"
-                                      : "gray"
-                                  }
-                                  fill={
-                                    review && review.rating >= 5
-                                      ? "orange"
-                                      : "gray"
-                                  }
-                                />
-                              </div>
-                            </div>
-                          </div>
-                          <button
-                            id="dropdownremark1Button"
-                            data-dropdown-toggle="dropdownremark1"
-                            className="inline-flex items-center p-2 text-sm font-medium text-center text-gray-500 dark:text-gray-400 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-50 dark:bg-gray-900 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-                            type="button"
-                          >
-                            <p className="text-sm text-gray-600 dark:text-gray-400">
-                              <time>
-                                {format(
-                                  review && review.createdAt,
-                                  "MMM. d, yyyy"
-                                )}
-                              </time>
-                            </p>
-                            <span className="sr-only">remark settings</span>
-                          </button>
-                          {/* Dropdown menu */}
-                          <div
-                            id="dropdownremark1"
-                            className="hidden z-10 w-36 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600"
-                          >
-                            <ul
-                              className="py-1 text-sm text-gray-700 dark:text-gray-200"
-                              aria-labelledby="dropdownMenuIconHorizontalButton"
-                            >
-                              <li>
-                                <a
-                                  href="#"
-                                  className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                                >
-                                  Edit
-                                </a>
-                              </li>
-                              <li>
-                                <a
-                                  href="#"
-                                  className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                                >
-                                  Remove
-                                </a>
-                              </li>
-                              <li>
-                                <a
-                                  href="#"
-                                  className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                                >
-                                  Report
-                                </a>
-                              </li>
-                            </ul>
-                          </div>
-                        </footer>
-                        <p className="text-gray-500 dark:text-gray-400">
-                          {review && review.remark}
-                        </p>
-                      </article>
+                     
+<div class="flex flex-col space-y-4 p-2">
+<div class="bg-white p-4 rounded-lg shadow-md">
+  <div className="flex justify-between">
+    <h3 class="text-xs font-bold"> {review && review.user && review.user.fullName}</h3>
+    <div className="flex text-sm text-gray-600 dark:text-gray-400">
+      <div>
+        <StarIcon
+          width={12}
+          height={12}
+          color={
+            review && review.rating >= 1
+              ? "orange"
+              : "gray"
+          }
+          fill={
+            review && review.rating >= 1
+              ? "orange"
+              : "gray"
+          }
+        />
+      </div>
+      <div>
+        <StarIcon
+          width={12}
+          height={12}
+          color={
+            review && review.rating >= 2
+              ? "orange"
+              : "gray"
+          }
+          fill={
+            review && review.rating >= 2
+              ? "orange"
+              : "gray"
+          }
+        />
+      </div>
+      <div>
+        <StarIcon
+          width={12}
+          height={12}
+          color={
+            review && review.rating >= 3
+              ? "orange"
+              : "gray"
+          }
+          fill={
+            review && review.rating >= 3
+              ? "orange"
+              : "gray"
+          }
+        />
+      </div>
+      <div>
+        <StarIcon
+          width={12}
+          height={12}
+          color={
+            review && review.rating >= 4
+              ? "orange"
+              : "gray"
+          }
+          fill={
+            review && review.rating >= 4
+              ? "orange"
+              : "gray"
+          }
+        />
+      </div>
+      <div>
+        <StarIcon
+          width={12}
+          height={12}
+          color={
+            review && review.rating >= 5
+              ? "orange"
+              : "gray"
+          }
+          fill={
+            review && review.rating >= 5
+              ? "orange"
+              : "gray"
+          }
+        />
+      </div>
+    </div>
+    </div>
+    <p class="text-gray-700 text-sm mb-2">Posted on  {format(
+          review && review.createdAt,
+          "MMM. d, yyyy"
+        )}
+        </p>
+    <p class="text-gray-700"> {review && review.remark} </p>
+</div>
+</div>
                     </>
                   ))
                 )}
