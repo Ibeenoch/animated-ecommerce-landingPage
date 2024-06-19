@@ -795,9 +795,9 @@ const ProductDetail = () => {
                       <>
                         <article className="p-6 text-base border-gray-300 border-b bg-white">
                           <footer className="flex justify-between items-center mb-2">
-                            <div className="flex items-center">
-                              <p className="inline-flex items-center mr-3 text-sm text-gray-900 font-semibold">
-                                  src={
+                            <div className="flex justify-between px-3 items-center">
+                              <p className="inline-flex items-center mr-3 text-xs text-gray-900 font-semibold">
+                              <img    src={
                                     review &&
                                     review.user &&
                                     review.user.image &&
@@ -810,8 +810,8 @@ const ProductDetail = () => {
                               <div className="flex text-sm text-gray-600 dark:text-gray-400">
                                 <div>
                                   <StarIcon
-                                    width={15}
-                                    height={15}
+                                    width={12}
+                                    height={12}
                                     color={
                                       review && review.rating >= 1
                                         ? "orange"
@@ -826,8 +826,8 @@ const ProductDetail = () => {
                                 </div>
                                 <div>
                                   <StarIcon
-                                    width={15}
-                                    height={15}
+                                    width={12}
+                                    height={12}
                                     color={
                                       review && review.rating >= 2
                                         ? "orange"
@@ -842,8 +842,8 @@ const ProductDetail = () => {
                                 </div>
                                 <div>
                                   <StarIcon
-                                    width={15}
-                                    height={15}
+                                    width={12}
+                                    height={12}
                                     color={
                                       review && review.rating >= 3
                                         ? "orange"
@@ -858,7 +858,7 @@ const ProductDetail = () => {
                                 </div>
                                 <div>
                                   <StarIcon
-                                    width={15}
+                                    width={12}
                                     color={
                                       review && review.rating >= 4
                                         ? "orange"
@@ -873,8 +873,8 @@ const ProductDetail = () => {
                                 </div>
                                 <div>
                                   <StarIcon
-                                    width={15}
-                                    height={15}
+                                    width={12}
+                                    height={12}
                                     color={
                                       review && review.rating >= 5
                                         ? "orange"
@@ -895,11 +895,11 @@ const ProductDetail = () => {
                               className="inline-flex items-center p-2 text-sm font-medium text-center text-gray-500 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-50"
                               type="button"
                             >
-                              <p className="text-sm text-gray-600">
+                              <p className="text-xs text-gray-600">
                                 <time>
                                   {format(
                                     review && review.createdAt,
-                                    "MMM. d, yyyy"
+                                    "MMM, d, yyyy"
                                   )}
                                 </time>
                               </p>
