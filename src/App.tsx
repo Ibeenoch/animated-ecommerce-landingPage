@@ -30,7 +30,7 @@ import PageNotFound from "./pages/PageNotFound";
 import { Toaster } from "react-hot-toast"
 
 
-const router = createBrowserRouter(
+const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
