@@ -35,29 +35,9 @@ import StarterThree from "./features/doc/StarterThree";
 import StarterFour from "./features/doc/StarterFour";
 
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
   {
     path: "/",
-    element: <Starter />,
-  },
-  {
-    path: "/starterone",
-    element: <StarterOne />,
-  },
-  {
-    path: "/startertwo",
-    element: <StarterTwo />,
-  },
-  {
-    path: "/starterthree",
-    element: <StarterThree />,
-  },
-  {
-    path: "/starterfour",
-    element: <StarterFour />,
-  },
-  {
-    path: "/product",
     element: <Home />,
   },
   {
