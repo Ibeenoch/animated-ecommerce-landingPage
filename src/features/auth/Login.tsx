@@ -64,7 +64,7 @@ const Login = () => {
            duration: 1500,
          });
           setIsClicked(false);
-          navigate(`/product`);
+          navigate(`/`);
         } else if (
           res &&
           res.payload &&
