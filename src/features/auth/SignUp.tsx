@@ -76,11 +76,11 @@ const SignUp: React.FC = () => {
            duration: 1500, 
          });
         
-          navigate("/product");
+          navigate("/");
         } else if (
           res &&
           res.payload &&
-          res.payload.role &&
+   res.payload.role &&
           res.payload.role === "USER"
         ) {
           toast.success("Registeration Successful",
