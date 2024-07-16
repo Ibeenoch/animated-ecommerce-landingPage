@@ -312,8 +312,8 @@ const NavBar: React.FC<Child> = ({ children, isOpen }) => {
 
               <Disclosure.Panel className="md:hidden">
 
-                 <div className="flex sm:hidden items-center">
-                    <div className="">
+                 <div className="flex sm:hidden items-center w-full">
+                    <div className="w-full">
                       <input
                         className="border-none bg-gray-100 w-full"
                         type="search"
