@@ -294,16 +294,46 @@ const NavBar: React.FC<Child> = ({ children, isOpen }) => {
                       <span className="sr-only">Open main menu</span>
                       {open ? (
                         <XMarkIcon
-                          className="block h-6 w-6"
+                          className="block h-7 w-7"
                           aria-hidden="true"
                         />
                       ) : (
                         <Bars3Icon
-                          className="block h-6 w-6"
+                          className="block h-7 w-7"
                           aria-hidden="true"
                         />
                       )}
                     </Disclosure.Button>
+
+                     <div className="hidden sm:flex align-center justify-center">
+                    <div className="">
+                      <input
+                        className="border-none bg-gray-100"
+                        type="search"
+                        width={30}
+                        onChange={(e) => setInputText(e.target.value)}
+                        value={inputText}
+                        placeholder="search for a product"
+                        onMouseLeave={handleMouseLeave}
+                        onMouseEnter={handleMouseEnter}
+                      />
+                    </div>
+                    <div
+                      className="cursor-pointer"
+                      onMouseLeave={handleMouseLeave}
+                      onMouseEnter={handleMouseEnter}
+                      onClick={handleSearch}
+                    >
+                      <MagnifyingGlassIcon
+                        width={18}
+                        height={18}
+                        color="black"
+                        className="mt-3"
+                      />
+                    </div>
+                  </div>
+
+                    
                   </div>
                 </div>
               </div>
@@ -369,6 +399,8 @@ const NavBar: React.FC<Child> = ({ children, isOpen }) => {
                       {checkCart ? checkCart.length : 0}
                     </span>
                   </div>
+
+                  
                   <div className="mt-3 space-y-1 px-2">
                     {userNavigation.map((item) => (
                       <Disclosure.Button
