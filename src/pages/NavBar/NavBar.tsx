@@ -315,9 +315,9 @@ const NavBar: React.FC<Child> = ({ children, isOpen }) => {
                  <div className="flex sm:hidden align-center justify-center">
                     <div className="">
                       <input
-                        className="border-none bg-gray-100"
+                        className="border-none bg-gray-100 w-full"
                         type="search"
-                        width={30}
+                        
                         onChange={(e) => setInputText(e.target.value)}
                         value={inputText}
                         placeholder="search for a product"
