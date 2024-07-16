@@ -167,8 +167,8 @@ const NavBar: React.FC<Child> = ({ children, isOpen }) => {
                       </div>
                     </div>
                   </div>
-                  <div className="flex align-center justify-center">
-                    <div className="hidden sm:block">
+                  <div className="hidden sm:flex align-center justify-center">
+                    <div className="">
                       <input
                         className="border-none bg-gray-100"
                         type="search"
