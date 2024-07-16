@@ -294,12 +294,12 @@ const NavBar: React.FC<Child> = ({ children, isOpen }) => {
                       <span className="sr-only">Open main menu</span>
                       {open ? (
                         <XMarkIcon
-                          className="block h-7 w-7 stroke-[3px]"
+                          className="block h-7 w-7 stroke-[2px]"
                           aria-hidden="true"
                         />
                       ) : (
                         <Bars3Icon
-                          className="block h-7 w-7 stroke-[3px]"
+                          className="block h-7 w-7 stroke-[2px]"
                           aria-hidden="true"
                         />
                       )}
