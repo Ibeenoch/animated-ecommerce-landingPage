@@ -312,12 +312,11 @@ const NavBar: React.FC<Child> = ({ children, isOpen }) => {
 
               <Disclosure.Panel className="md:hidden">
 
-                 <div className="flex sm:hidden align-center justify-center">
+                 <div className="flex sm:hidden items-center">
                     <div className="">
                       <input
                         className="border-none bg-gray-100 w-full"
                         type="search"
-                        
                         onChange={(e) => setInputText(e.target.value)}
                         value={inputText}
                         placeholder="search for a product"
@@ -332,8 +331,8 @@ const NavBar: React.FC<Child> = ({ children, isOpen }) => {
                       onClick={handleSearch}
                     >
                       <MagnifyingGlassIcon
-                        width={18}
-                        height={18}
+                        width={19}
+                        height={19}
                         color="black"
                         className="mt-3"
                       />
