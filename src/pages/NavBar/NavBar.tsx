@@ -294,18 +294,18 @@ const NavBar: React.FC<Child> = ({ children, isOpen }) => {
                       <span className="sr-only">Open main menu</span>
                       {open ? (
                         <XMarkIcon
-                          className="block h-7 w-7"
+                          className="block h-7 w-7 stroke-[3px]"
                           aria-hidden="true"
                         />
                       ) : (
                         <Bars3Icon
-                          className="block h-7 w-7"
+                          className="block h-7 w-7 stroke-[3px]"
                           aria-hidden="true"
                         />
                       )}
                     </Disclosure.Button>
 
-                     <div className="hidden sm:flex align-center justify-center">
+                     <div className="flex sm:hidden align-center justify-center">
                     <div className="">
                       <input
                         className="border-none bg-gray-100"
