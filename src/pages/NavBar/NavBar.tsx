@@ -305,7 +305,14 @@ const NavBar: React.FC<Child> = ({ children, isOpen }) => {
                       )}
                     </Disclosure.Button>
 
-                     <div className="flex sm:hidden align-center justify-center">
+                                        
+                  </div>
+                </div>
+              </div>
+
+              <Disclosure.Panel className="md:hidden">
+
+                 <div className="flex sm:hidden align-center justify-center">
                     <div className="">
                       <input
                         className="border-none bg-gray-100"
@@ -333,12 +340,7 @@ const NavBar: React.FC<Child> = ({ children, isOpen }) => {
                     </div>
                   </div>
 
-                    
-                  </div>
-                </div>
-              </div>
-
-              <Disclosure.Panel className="md:hidden">
+                
                 <div className="space-y-1 px-2 pb-3 pt-2 sm:px-3">
                   {navigation.map((item) => (
                     <Disclosure.Button
