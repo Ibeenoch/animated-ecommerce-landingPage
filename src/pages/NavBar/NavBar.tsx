@@ -312,7 +312,7 @@ const NavBar: React.FC<Child> = ({ children, isOpen }) => {
 
               <Disclosure.Panel className="md:hidden">
 
-                 <div className="flex sm:hidden items-center w-full px-4">
+                 <div className="flex sm:hidden items-center gap-1 w-full px-4">
                     <div className="w-full">
                       <input
                         className="border-none bg-gray-100 w-full"
