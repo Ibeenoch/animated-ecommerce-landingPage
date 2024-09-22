@@ -61,6 +61,13 @@ import HeaderTitle from '../../atomicDesign/atoms/HeaderTitle';
 import ViewMoreBtn from '../../atomicDesign/atoms/ViewMoreBtn';
 import ImgTitleAndBtn from '../../atomicDesign/molecules/ImgTitleAndBtn';
 
+
+interface productProps {
+    img: any,
+    caption: string,
+    price: string,
+    reviews: number,
+}
 const Home = () => {
   // const [ authorizedBannerImage, setAuthorizedBannerImage ] = useState<string>('');
   const [authorizedCount, setAuthorizedCount ] = useState<number>(0);
@@ -72,6 +79,14 @@ const Home = () => {
   const [backInStockCount, setBackInStockCount ] = useState<number>(0);
   const [mobilebackInStockCount, setMobileBackInStockCount ] = useState<number>(0);
   const [mobilefeatureCount, setMobileFeatureCount ] = useState<number>(0);
+  const [backInStockIcon, setBackInStockIcon] = useState<Array<number>>([]);
+  const [backInStockCaption, setBackInStockCaption] = useState<Array<string>>([]);
+  const [featuredIcon, setFeaturedIcon] = useState<Array<number>>([]);
+  const [featuredCaption, setFeaturedCaption] = useState<Array<string>>([]);
+  const [newArrivalIcon, setNewArrivalIcon] = useState<Array<number>>([]);
+  const [newArrivalCaption, setNewArrivalCaption] = useState<Array<string>>([]);
+  const [bestSellerIcon, setBestSellerIcon] = useState<Array<number>>([]);
+  const [bestSellerCaption, setBestSellerCaption] = useState<Array<string>>([]);
   const [animationClass, setAnimationClass] = useState<string>('carousel-enter');
   const authorizedSeller = [
     authorizedImg1, authorizedImg2, authorizedImg3
@@ -852,6 +867,53 @@ const Home = () => {
     }
   }, [])
 
+  const handleLikeBackInStock = (item: productProps, index: number) => {
+    
+    if(backInStockCaption.includes(item.caption)){
+      setBackInStockCaption((it) => it.filter((i => i !== item.caption) ))
+      setBackInStockIcon((e) => e.filter((i => i !== index )))
+    }else{
+      setBackInStockCaption((i) => [...i, item.caption])
+      setBackInStockIcon((e) => [...e, index])
+    }
+      
+  }
+
+  const handleLikeFeature = (item: productProps, index: number) => {
+    
+    if(featuredCaption.includes(item.caption)){
+      setFeaturedCaption((it) => it.filter((i => i !== item.caption) ))
+      setFeaturedIcon((e) => e.filter((i => i !== index )))
+    }else{
+      setFeaturedCaption((i) => [...i, item.caption])
+      setFeaturedIcon((e) => [...e, index])
+    }
+      
+  }
+
+  const handleLikeNewArrival = (item: productProps, index: number) => {
+    
+    if(newArrivalCaption.includes(item.caption)){
+      setNewArrivalCaption((it) => it.filter((i => i !== item.caption) ))
+      setNewArrivalIcon((e) => e.filter((i => i !== index )))
+    }else{
+      setNewArrivalCaption((i) => [...i, item.caption])
+      setNewArrivalIcon((e) => [...e, index])
+    }
+      
+  }
+
+  const handleLikeBestSeller = (item: productProps, index: number) => {
+    
+    if(bestSellerCaption.includes(item.caption)){
+      setBestSellerCaption((it) => it.filter((i => i !== item.caption) ))
+      setBestSellerIcon((e) => e.filter((i => i !== index )))
+    }else{
+      setBestSellerCaption((i) => [...i, item.caption])
+      setBestSellerIcon((e) => [...e, index])
+    }
+      
+  }
 
   return (
       <main>
@@ -859,9 +921,9 @@ const Home = () => {
           <HomeBanner />
         </section>
 
-        <article className='p-6 bg-[#fff3d0] border-t-[3px] border-b-[3px]  banner-font-family flex gap-8 items-center justify-center border-t-black border-b-black'>
-          <h2 className='text-[15px] sm:text-[22px] montserrat text-center leading-4 font-bold'>JOIN TEEKA4 PLUS & BECOME A WHOLESALER </h2>
-          <Link to='#'> <h2 className='border-b-[3px] montserrat border-b-black pb-1 text-[15px] sm:text-[22px] text-center leading-4 font-bold'>JOIN NOW</h2></Link>
+        <article className='p-6 bg-[#fff3d0] border-t-[1px] sm:border-t-[2px] border-b-[1px] sm:border-b-[2px]  banner-font-family flex sm:gap-8 gap-2 items-center justify-center border-t-black border-b-black'>
+          <h2 className='text-[15px]  sm:text-[22px] montserrat text-center leading-4 font-semibold'>JOIN TEEKA4 PLUS & BECOME A WHOLESALER </h2>
+          <Link to='#'> <h2 className='sm:border-b-[2px] border-b-[1px] montserrat border-b-black pb-1 text-[15px] sm:text-[22px] text-center leading-4 font-semibold '>JOIN NOW</h2></Link>
         </article>
 
         <div className='w-full flex bg-[#fff3d0] relative'>
@@ -910,7 +972,7 @@ const Home = () => {
                 <Link to='#' className='w-full relative' >
                   <img src={item.img} alt={item.caption} className='w-full h-auto' />
                   <span className='absolute top-2 right-2'>
-                    <Heart className='w-5 h-5' />
+                  <Heart className='w-6 h-6' onClick={() =>handleLikeFeature(item, index)} fill={`${featuredIcon.includes(index) && featuredCaption.includes(item.caption) ? 'red' : "white"}`} stroke={`${featuredIcon.includes(index) && featuredCaption.includes(item.caption) ? 'red' : "gray"}`} />
                   </span>
                 </Link>
                 <article>
@@ -943,7 +1005,7 @@ const Home = () => {
                 <Link to='#' className='w-full relative' >
                   <img src={item.img} alt={item.caption} className='w-full h-auto' />
                   <span className='absolute top-3 right-3'>
-                    <Heart className='w-6 h-6' />
+                  <Heart className='w-6 h-6' onClick={() =>handleLikeFeature(item, index)} fill={`${featuredIcon.includes(index) && featuredCaption.includes(item.caption) ? 'red' : "white"}`} stroke={`${featuredIcon.includes(index) && featuredCaption.includes(item.caption) ? 'red' : "gray"}`} />
                   </span>
                 </Link>
                 <article>
@@ -980,7 +1042,7 @@ const Home = () => {
                 <Link to='#' className='w-full relative' >
                   <img src={item.img} alt={item.caption} className='w-full h-auto' />
                   <span className='absolute top-2 right-2'>
-                    <Heart className='w-5 h-5' />
+                  <Heart className='w-6 h-6' onClick={() =>handleLikeBackInStock(item, index)} fill={`${backInStockIcon.includes(index) && backInStockCaption.includes(item.caption) ? 'red' : "white"}`} stroke={`${backInStockIcon.includes(index) && backInStockCaption.includes(item.caption) ? 'red' : "gray"}`} />
                   </span>
                 </Link>
                 <article>
@@ -1013,7 +1075,7 @@ const Home = () => {
                 <Link to='#' className='w-full relative' >
                   <img src={item.img} alt={item.caption} className='w-full h-auto' />
                   <span className='absolute top-3 right-3'>
-                    <Heart className='w-6 h-6' />
+                    <Heart className='w-6 h-6' onClick={() =>handleLikeBackInStock(item, index)} fill={`${backInStockIcon.includes(index) && backInStockCaption.includes(item.caption) ? 'red' : "white"}`} stroke={`${backInStockIcon.includes(index) && backInStockCaption.includes(item.caption) ? 'red' : "gray"}`} />
                   </span>
                 </Link>
                 <article>
@@ -1054,7 +1116,7 @@ const Home = () => {
                 <Link to='#' className='w-full relative' >
                   <img src={item.img} alt={item.caption} className='w-full h-auto' />
                   <span className='absolute top-2 right-2'>
-                    <Heart className='w-5 h-5' />
+                  <Heart className='w-6 h-6' onClick={() =>handleLikeNewArrival(item, index)} fill={`${newArrivalIcon.includes(index) && newArrivalCaption.includes(item.caption) ? 'red' : "white"}`} stroke={`${newArrivalIcon.includes(index) && newArrivalCaption.includes(item.caption) ? 'red' : "gray"}`} />
                   </span>
                 </Link>
                 <article>
@@ -1087,7 +1149,7 @@ const Home = () => {
                 <Link to='#' className='w-full relative' >
                   <img src={item.img} alt={item.caption} className='w-full h-auto' />
                   <span className='absolute top-3 right-3'>
-                    <Heart className='w-6 h-6' />
+                  <Heart className='w-6 h-6' onClick={() =>handleLikeNewArrival(item, index)} fill={`${newArrivalIcon.includes(index) && newArrivalCaption.includes(item.caption) ? 'red' : "white"}`} stroke={`${newArrivalIcon.includes(index) && newArrivalCaption.includes(item.caption) ? 'red' : "gray"}`} />
                   </span>
                 </Link>
                 <article>
@@ -1160,7 +1222,7 @@ const Home = () => {
                 <Link to='#' className='w-full relative' >
                   <img src={item.img} alt={item.caption} className='w-full h-auto' />
                   <span className='absolute top-2 right-2'>
-                    <Heart className='w-5 h-5' />
+                  <Heart className='w-6 h-6' onClick={() =>handleLikeBestSeller(item, index)} fill={`${bestSellerIcon.includes(index) && bestSellerCaption.includes(item.caption) ? 'red' : "white"}`} stroke={`${bestSellerIcon.includes(index) && bestSellerCaption.includes(item.caption) ? 'red' : "gray"}`} />
                   </span>
                 </Link>
                 <article>
@@ -1193,7 +1255,7 @@ const Home = () => {
                 <Link to='#' className='w-full relative' >
                   <img src={item.img} alt={item.caption} className='w-full h-auto' />
                   <span className='absolute top-3 right-3'>
-                    <Heart className='w-6 h-6' />
+                  <Heart className='w-6 h-6' onClick={() =>handleLikeBestSeller(item, index)} fill={`${bestSellerIcon.includes(index) && bestSellerCaption.includes(item.caption) ? 'red' : "white"}`} stroke={`${bestSellerIcon.includes(index) && bestSellerCaption.includes(item.caption) ? 'red' : "gray"}`} />
                   </span>
                 </Link>
                 <article>
