@@ -3,7 +3,7 @@ import '../../../index.css'
 import CompanyLogo from '../../atoms/CompanyLogo'
 import { useNavigate } from 'react-router-dom'
 import ShoppingIcons from '../../molecules/ShoppingIcons';
-import  { ReactComponent as HamburgerMenu  } from '../../../assets/svg/hamburger-md-svgrepo-com.svg'
+import  { ReactComponent as HamburgerMenu  } from '../../../assets/svg/menu-list-1527-svgrepo-com.svg'
 import NavPages from '../../molecules/NavPages';
 import { useAppDispatch } from '../../../app/hooks';
 import { toggleMobileNav } from '../../../features/auth/authSlice';
