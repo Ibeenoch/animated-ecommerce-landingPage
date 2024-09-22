@@ -1,13 +1,7 @@
 import { configureStore, ThunkAction, Action, combineReducers } from '@reduxjs/toolkit';
 import storage from 'redux-persist/lib/storage';
-import { persistReducer, persistStore } from 'redux-persist';
-import thunk from 'redux-thunk';
-import  productReducer  from '../features/ProductList/ProductSlice';
-import cartReducer from '../features/cart/cartSlice'
-import wishReducer from '../features/wishlist/wishListSlice'
-import authReducer from '../features/auth/authSlice'
-import checkoutReducer from '../features/checkout/checkoutSlice';
-import orderReducer from '../features/order/orderSlice';
+import { FLUSH, PAUSE, PERSIST, persistReducer, persistStore, PURGE, REGISTER, REHYDRATE } from 'redux-persist';
+import authReducer from '../features/auth/authSlice';
 
 const persistConfig = {
   key: 'root',
@@ -16,19 +10,20 @@ const persistConfig = {
 }
 
 const reducers = combineReducers({
-  product: productReducer,
-  cart: cartReducer,
-  wishlist: wishReducer,
   auth: authReducer,
-  checkout: checkoutReducer,
-  order: orderReducer
 })
 
 const persistedReducer = persistReducer(persistConfig, reducers)
 
 
 export const store = configureStore({
-  reducer: persistedReducer
+  reducer: persistedReducer,
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+      },
+    }),
 });
 
 export type AppDispatch = typeof store.dispatch;
