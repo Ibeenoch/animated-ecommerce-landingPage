@@ -13,7 +13,7 @@ const FooterLinks = ({ title, links }: FooterProps) => {
         {
             links.map((link, index) => (
                 <Link className='text-left text-lg font-normal' key={index} to="#">
-                    <li className='py-4 text-md'>{link}</li>
+                    <li className='sm:py-4 py-2 text-xs sm:text-md'>{link}</li>
                 </Link>
             ))
         }

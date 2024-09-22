@@ -1203,8 +1203,8 @@ const Home = () => {
               <div className='mx-auto'>
                 <h1 className='text-[25px] sm:text-[73px] leading-[1.2rem]  text-white font-semibold libre text-center'>Talk To An Experienced </h1>
                 <h1 className='text-[25px] sm:text-[73px]  leading-xs text-white font-semibold libre text-center'> Specialist Anytime, Anywhere</h1>
-                <div className='flex justify-center border-[2px] border-[2px]-white rounded-md w-max mx-auto'>
-                <button className='text-md text-white font-semibold px-6 py-2'>Book Consultation</button>
+                <div className='flex justify-center border-[2px] border-[2px]-white hover:border-0 rounded-md w-max mx-auto'>
+                <button className='text-md text-white hover:bg-gray-500 hover:bg-opacity-30 font-semibold px-6 py-2'>Book Consultation</button>
                 </div>
               </div>
             </div>

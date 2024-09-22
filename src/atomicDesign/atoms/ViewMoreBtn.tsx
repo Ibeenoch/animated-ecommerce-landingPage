@@ -5,7 +5,7 @@ interface Props {
 
 const ViewMoreBtn = ({ title }: Props) => {
   return (
-        <button className='bg-white hover:bg-black hover:text-white font-bold border border-black rounded-xl libre text-center tracking-tight text-[16px] px-6 py-4'>{title}</button>
+        <button className='bg-white hover:bg-black hover:text-white font-bold border border-black border-opacity-30 sm:rounded-xl rounded-lg libre text-center tracking-tight text-[12px] sm:text-[16px] sm:px-6 sm:py-4 px-4 py-2'>{title}</button>
   )
 }
 
