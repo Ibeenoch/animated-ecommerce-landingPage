@@ -145,8 +145,8 @@ const MobileNavList = ({Text}: PropsItems) => {
                 <ul className={`pl-[5%] p-4`}>
                 {
                     aboutItems.map((about, index) => (
-                        <li key={index} className='p-4 upward-motion'>
-                            <Link to="#">{about}</Link>
+                        <li key={index} className='p-4 upward-motion text-[12px]'>
+                            <Link to="#" className='text-[12px]'>{about}</Link>
                         </li>
                     ))
                 }
@@ -158,8 +158,8 @@ const MobileNavList = ({Text}: PropsItems) => {
                 <ul className={`pl-[5%] p-4`}>
                 {
                     wholeItems.map((about, index) => (
-                        <li key={index} className='p-4 upward-motion'>
-                            <Link to="#">{about}</Link>
+                        <li key={index} className='p-4 text-[12px] upward-motion'>
+                            <Link to="#" className='text-[12px]'>{about}</Link>
                         </li>
                     ))
                 }
@@ -171,8 +171,8 @@ const MobileNavList = ({Text}: PropsItems) => {
                 <ul className={`pl-[5%] p-4`}>
                 {
                     bodyItems.map((about, index) => (
-                        <li key={index} className='p-4 upward-motion'>
-                            <Link to="#">{about}</Link>
+                        <li key={index} className='text-[12px] p-4 upward-motion'>
+                            <Link to="#" className='text-[12px]'>{about}</Link>
                         </li>
                     ))
                 }
@@ -184,8 +184,8 @@ const MobileNavList = ({Text}: PropsItems) => {
                 <ul className={`pl-[5%] p-4`}>
                 {
                     faceItems.map((about, index) => (
-                        <li key={index} className='p-4 upward-motion'>
-                            <Link to="#">{about}</Link>
+                        <li key={index} className='text-[12px] p-4 upward-motion'>
+                            <Link to="#" className='text-[12px]'>{about}</Link>
                         </li>
                     ))
                 }
@@ -197,8 +197,8 @@ const MobileNavList = ({Text}: PropsItems) => {
                 <ul className={`pl-[5%] p-4`}>
                 {
                     skinsItems.map((about, index) => (
-                        <li key={index} className='p-4 upward-motion'>
-                            <Link to="#">{about}</Link>
+                        <li key={index} className='p-4 text-[12px] upward-motion'>
+                            <Link to="#" className='text-[12px]'>{about}</Link>
                         </li>
                     ))
                 }
@@ -210,8 +210,8 @@ const MobileNavList = ({Text}: PropsItems) => {
                 <ul className={`pl-[5%] p-4`}>
                 {
                     IngredientItems.map((about, index) => (
-                        <li key={index} className='p-4 upward-motion'>
-                            <Link to="#">{about}</Link>
+                        <li key={index} className='p-4 text-[12px] upward-motion'>
+                            <Link to="#" className='text-[12px]'>{about}</Link>
                         </li>
                     ))
                 }

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 interface FooterProps {
     title: string;
@@ -11,9 +12,9 @@ const FooterLinks = ({ title, links }: FooterProps) => {
         <ul className=''>
         {
             links.map((link, index) => (
-                <a className='text-left text-lg font-normal' key={index} href="#">
+                <Link className='text-left text-lg font-normal' key={index} to="#">
                     <li className='py-4 text-md'>{link}</li>
-                </a>
+                </Link>
             ))
         }
         </ul>
